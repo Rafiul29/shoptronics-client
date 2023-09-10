@@ -1,8 +1,11 @@
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+
 function App() {
   return (
-    <div className="container mx-auto bg-rose-300">
-      welcome to strop
-      tronics e-commerce
+    <div >
+     <Navbar/>
+     <Footer/>
   </div>
   );
 }

@@ -4,3 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.wrapper{
+  @apply container mx-auto px-5 md:px-0
+}
