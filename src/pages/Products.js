@@ -2,7 +2,9 @@
 
 const Products = () => {
   return (
-    <div>Product</div>
+    <div className="section_margin_top wrapper">
+      Product
+      </div>
   )
 }
 

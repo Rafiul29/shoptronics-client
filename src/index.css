@@ -7,3 +7,23 @@
 .wrapper{
   @apply container mx-auto px-5 md:px-0
 }
+
+
+
+/* LINK STYLES */
+.link-item {
+  @apply relative;
+}
+
+.link-item::after {
+  @apply absolute bottom-0 left-1/2  h-px w-0 -translate-x-1/2 bg-indigo-600 content-[""];
+}
+
+.link-item:hover::after {
+  @apply w-full duration-700;
+}
+
+/* section margin */
+.section_margin_top{
+  @apply mt-40
+}
