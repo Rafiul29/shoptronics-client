@@ -16,7 +16,8 @@ const Navbar = () => {
         {/* nav logo */}
         <h2 className="logo">
           <Link className="text-2xl font-semibold" to="/">
-            Sh<span className="text-indigo-500 text-3xl">o</span>p Tronics
+            Sh<span className="text-indigo-500 text-3xl">o</span>p Tro
+            <span className="text-indigo-500 text-3xl">n</span>ics
           </Link>
         </h2>
 
@@ -50,7 +51,7 @@ const Navbar = () => {
 
             <Link
               to="/"
-              className=" bg-black/90 text-white  px-5 py-3 rounded-xl font text-xl  hover:bg-black/75 hover:shadow-md hover:shadow-black/40duration-700"
+              className=" bg-indigo-600/90 text-indigo-50 text-md px-5 py-3 rounded-xl font text-xl  hover:bg-indigo-500/75 hover:shadow-md hover:shadow-indigo-500/40 duration-700"
             >
               Sign In
             </Link>
@@ -77,28 +78,28 @@ const Navbar = () => {
       {/*mobile navbar*/}
       <div
         onClick={() => setOpen((prev) => !prev)}
-        className={`md:hidden  absolute w-full h-[23rem] bottom-0 left-0 right-0 top-[5rem] pl-8 duration-500 bg-gray-500  py-10  z-[20] shadow-md  shadow-gray-400 ${
+        className={`md:hidden  absolute w-full h-[23rem] bottom-0 left-0 right-0 top-[5rem] pl-8 duration-500 bg-indigo-400  py-10  z-[20] shadow-md  shadow-indigo-300/80 ${
           open ? "left-0" : "left-[-120%]"
         }`}
       >
-       <div className="flex flex-col gap-5 z-30">
-       <Link to="/">Home</Link>
-        <Link to="/products">Products</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
-        <Link
-          className=" text-xl flex justify-start items-center gap-1"
-          to="/cart"
-        >
-          <AiOutlineShoppingCart /> Cart
-        </Link>
-        <Link
-          to="/"
-          className="self-start bg-black/90 text-white  px-5 py-3 rounded-xl font text-xl  hover:bg-black/75 hover:shadow-md hover:shadow-black/40 duration-700"
-        >
-          Sign In
-        </Link>
-       </div>
+        <div className="flex flex-col gap-5 z-30">
+          <Link to="/">Home</Link>
+          <Link to="/products">Products</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
+          <Link
+            className=" text-xl flex justify-start items-center gap-1"
+            to="/cart"
+          >
+            <AiOutlineShoppingCart /> Cart
+          </Link>
+          <Link
+            to="/"
+            className="self-start text-indigo-600/90 bg-indigo-100 text-md  px-5 py-3 rounded-xl font text-xl  hover:bg-indigo-100/80 hover:shadow-md hover:shadow-white/40 duration-700"
+          >
+            Sign In
+          </Link>
+        </div>
       </div>
     </header>
   );

@@ -8,6 +8,10 @@
   @apply container mx-auto px-5 md:px-0
 }
 
+/* BASE STYLE */
+main{
+  @apply mt-20
+}
 
 
 /* LINK STYLES */
@@ -23,7 +27,7 @@
   @apply w-full duration-700;
 }
 
-/* section margin */
-.section_margin_top{
-  @apply mt-40
+/* section padding */
+.section-padding{
+  @apply py-20
 }

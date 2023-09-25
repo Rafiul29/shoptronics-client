@@ -1,7 +1,10 @@
+import Products from "./Products"
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <main>
+      <Products/>
+    </main>
   )
 }
 
