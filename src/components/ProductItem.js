@@ -10,8 +10,9 @@ const ProductItem = () => {
   const product = products.find((p) => p._id === +productId);
 
   return (
-    <section className=" wrapper py-20 mt-20 h-[calc(100vh-10rem)]">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+    <section className="section-padding">
+      <main className="wrapper">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
         <div className="img h-100 overflow-hidden">
           <img
             src={product.image}
@@ -30,7 +31,7 @@ const ProductItem = () => {
           </h3>
           <h3 className="flex flex-row gap-5 text-lg ">
             {" "}
-            <span>Status:</span> <span className="font-semibold">{product.countInStock>0?"In Stock":"Out of Stock"}</span>
+            <span>Status:</span> <span className="font-semibold">{product.countInStock>0?"In Stock":<div className="text-red-400">Out of Stock</div>}</span>
           </h3>
           <Rating value={product.rating} text={`${product.numReviews}`}/>
 
@@ -40,6 +41,7 @@ const ProductItem = () => {
          <Link to="/products" className="inline-block">Go Back</Link>
         </div>
       </div>
+      </main>
     </section>
   );
 };

@@ -7,17 +7,27 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 
 import ProductItem from "./components/ProductItem";
-
+import NotFound from "./pages/NotFound";
+import SignIn from "./pages/SignIn";
+import SignUp from './pages/SignUp'
 function App() {
+
   return (
     <>
     <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
+
         <Route path="/products" element={<Products/>}/>
         <Route path="/product/:id" element={<ProductItem/>}/>
+
         <Route path="/about" element={<About/>}/>
         <Route path="/contact" element={<Contact/>}/>
+
+        <Route path="/sign-up" element={<SignUp/>}/>
+        <Route path="/sign-in" element={<SignIn/>}/>
+       
+        <Route path="*" element={<NotFound/>}/>
       </Routes>
      <Footer/>
     </>

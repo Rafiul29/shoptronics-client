@@ -16,8 +16,8 @@ const Navbar = () => {
         {/* nav logo */}
         <h2 className="logo">
           <Link className="text-2xl font-semibold" to="/">
-            Sh<span className="text-indigo-500 text-3xl">o</span>p Tro
-            <span className="text-indigo-500 text-3xl">n</span>ics
+            Sh<span className="text-blue-500 text-3xl">o</span>p Tro
+            <span className="text-blue-500 text-3xl">n</span>ics
           </Link>
         </h2>
 
@@ -51,7 +51,7 @@ const Navbar = () => {
 
             <Link
               to="/"
-              className=" bg-indigo-600/90 text-indigo-50 text-md px-5 py-3 rounded-xl font text-xl  hover:bg-indigo-500/75 hover:shadow-md hover:shadow-indigo-500/40 duration-700"
+              className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
             >
               Sign In
             </Link>
