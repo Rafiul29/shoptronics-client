@@ -5,8 +5,10 @@ import Rating from "./Rating";
 
 const Card = ({ product }) => {
   return (
-    <div className="product flex flex-col gap-5 bg-gray-200 rounded-md overflow-hidden  shadow-md hover:shadow-xl duration-300 ">
-      <div className="img group w-full h-64 overflow-hidden ">
+    // bg-white md:border border-1/2 md:p-8  p-3 md:rounded-xl md:shadow-xl
+    // flex flex-col gap-5 bg-blue-50 rounded-md overflow-hidden  shadow-md hover:shadow-xl duration-300
+    <div className="product flex flex-col gap-2 bg-white/90 rounded-xl shadow-xl overflow-hidden hover:shadow-2xl duration-500 ">
+      <div className="img group w-full h-48 overflow-hidden ">
         <img
           src={product.image}
           alt={product.name}
