@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useTitle } from "../hooks/useTitle";
 
 const SignUp = () => {
+
+  // title
+  useTitle("Sing Up")
   const [show, setShow] = useState(false);
 
   const handleSubmit = (e) => {

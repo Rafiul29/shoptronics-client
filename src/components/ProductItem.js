@@ -3,12 +3,16 @@ import products from "../data/products";
 import { currencyFormatter } from "../utilites/currencyFormatter";
 import Rating from "./Rating";
 import Button from "./Button";
+import { useTitle } from "../hooks/useTitle";
 
 const ProductItem = () => {
+
+
   const { id: productId } = useParams();
 
   const product = products.find((p) => p._id === +productId);
-
+   // title
+   useTitle(`Product-${product.name}`)
   return (
     <section className="section-padding">
       <main className="wrapper">

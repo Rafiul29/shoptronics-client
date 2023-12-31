@@ -1,7 +1,10 @@
 import Card from "../components/Card.js";
 import products from "../data/products";
+import { useTitle } from "../hooks/useTitle.js";
 
 const Products = () => {
+  // title
+  useTitle("Product")
   return (
     <section className="section-padding mt-20">
     <div className="wrapper">

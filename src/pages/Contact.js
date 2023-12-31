@@ -4,11 +4,13 @@ import { FaInstagram } from "react-icons/fa6";
 import emailjs from "@emailjs/browser"
 import { useRef } from "react";
 import { toast } from "react-toastify";
-
+import {useTitle} from "../hooks/useTitle";
 
 const Contact = () => {
 
   const formRef=useRef(null)
+
+  useTitle("Contact");
 
   const sendEmail=(e)=>{
     e.preventDefault();
@@ -52,7 +54,7 @@ const Contact = () => {
   return (
     <div className="section-padding mt-20 md:h-[calc(100vh-9rem)] ">
       <div className="md:mx-auto md:w-[70%] wrapper">
-
+    
         {/* section title */}
         <SectionTitle title={"Contact Us"} />
 
