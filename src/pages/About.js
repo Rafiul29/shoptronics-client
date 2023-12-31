@@ -1,7 +1,11 @@
 
 const About = () => {
   return (
-    <div className="wrapper section-padding">About</div>
+    <div className="section-padding mt-20 min-h-[calc(100vh-9rem)]">
+      <div className="wrapper">
+        about
+      </div>
+    </div>
   )
 }
 

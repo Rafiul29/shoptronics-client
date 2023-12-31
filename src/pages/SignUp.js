@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaEye } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const SignUp = () => {
@@ -67,10 +67,13 @@ const SignUp = () => {
                 className="w-full border rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 "
                 placeholder="Enter your password"
               />
-              <FaEye
+             {show &&  <FaEye
                 onClick={() => setShow(!show)}
                 className="absolute right-5 top-10 cursor-pointer"
-              />
+              />}
+             {
+              !show &&  <FaEyeSlash  onClick={() => setShow(!show)} className="absolute right-5 top-10 cursor-pointer" />
+             }
             </div>
 
             {/* phone */}

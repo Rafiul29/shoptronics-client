@@ -10,11 +10,15 @@ import ProductItem from "./components/ProductItem";
 import NotFound from "./pages/NotFound";
 import SignIn from "./pages/SignIn";
 import SignUp from './pages/SignUp'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css';
+
 function App() {
 
   return (
     <>
     <Navbar/>
+    <ToastContainer/>
       <Routes>
         <Route path="/" element={<Home/>}/>
 
