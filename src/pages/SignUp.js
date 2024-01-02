@@ -15,21 +15,21 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [agreed, setAgreed] = useState(false);
-  const [error,setError]=useState("");
-  const [register,{data,isLoading,error:responseError}]=useRegisterMutation();
+  const [error, setError] = useState("");
+  const [register, { data, isLoading, error: responseError }] =
+    useRegisterMutation();
 
-   const navigate=useNavigate();
+  const navigate = useNavigate();
 
-  useEffect(()=>{
-    if(responseError?.data){
+  useEffect(() => {
+    if (responseError?.data) {
       setError(responseError.data);
     }
-    
-    if(data?.token && data?.user){
+
+    if (data?.token && data?.user) {
       navigate("/sign-in");
     }
-  
-  },[data,responseError,navigate])
+  }, [data, responseError, navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,7 +39,7 @@ const SignUp = () => {
       email,
       password,
       phone,
-    })
+    });
     // setFullname("");
     // setEmail("");
     // setPassword("");
@@ -63,7 +63,7 @@ const SignUp = () => {
                 htmlFor="name"
                 className=" text-gray-700 text-md font-bold"
               >
-               Full Name
+                Full Name
               </label>
               <input
                 onChange={(e) => setFullname(e.target.value)}
@@ -146,7 +146,7 @@ const SignUp = () => {
                 placeholder="Enter your phone number"
               />
             </div>
-        
+
             <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <input
@@ -182,7 +182,7 @@ const SignUp = () => {
                 sign in
               </Link>
             </p>
-            {error!=="" && <Error message={error.message}/>}
+            {error !== "" && <Error message={error.message} />}
           </form>
         </div>
       </div>

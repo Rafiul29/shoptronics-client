@@ -26,7 +26,6 @@ export const authApi = apiSlice.injectEndpoints({
               user: result.data.user,
             })
           );
-          console.log("dis")
         } catch (err) {
           // do nothing
         }
@@ -34,7 +33,7 @@ export const authApi = apiSlice.injectEndpoints({
     }),
     login: builder.mutation({
       query: (data) => ({
-        url: "/login",
+        url: "/auth/public/login",
         method: "POST",
         body: data,
       }),

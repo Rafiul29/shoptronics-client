@@ -1,16 +1,41 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FaEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa";
 import { useTitle } from "../hooks/useTitle";
+import { useLoginMutation } from "../features/auth/authApi";
+import Error from "../components/ui/Error";
 
 const SignIn = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const [login, { data, isLoading, error: responseError }] = useLoginMutation();
+
   // title
-  useTitle("Sing ")
+  useTitle("Sing in");
   const [show, setShow] = useState(false);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (responseError?.data) {
+      setError(responseError.data);
+    }
+
+    if (data?.token && data?.user) {
+      navigate("/");
+    }
+  }, [data, responseError, navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setError("");
+    login({
+      email,
+      password,
+    })
   };
 
   return (
@@ -31,6 +56,8 @@ const SignIn = () => {
                 Email
               </label>
               <input
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
                 type="email"
                 id="email"
                 name="email"
@@ -46,7 +73,8 @@ const SignIn = () => {
               >
                 Password
               </label>
-              <input
+              <input onChange={(e) => setPassword(e.target.value)}
+                value={password}
                 type={`${show ? "text" : "password"}`}
                 id="password"
                 name="password"
@@ -70,6 +98,7 @@ const SignIn = () => {
             <button
               type="submit"
               className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
+              disabled={isLoading}
             >
               Sign In
             </button>
@@ -82,6 +111,7 @@ const SignIn = () => {
                 sign up
               </Link>
             </p>
+            {error!=="" && <Error message={error.message}/>}
           </form>
         </div>
       </div>
