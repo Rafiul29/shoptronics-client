@@ -6,7 +6,7 @@ import { useTitle } from "../hooks/useTitle";
 
 const SignIn = () => {
   // title
-  useTitle("Sing In")
+  useTitle("Sing ")
   const [show, setShow] = useState(false);
 
   const handleSubmit = (e) => {

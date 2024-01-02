@@ -9,7 +9,7 @@ import {useTitle} from "../hooks/useTitle";
 const Contact = () => {
 
   const formRef=useRef(null)
-
+// page title
   useTitle("Contact");
 
   const sendEmail=(e)=>{

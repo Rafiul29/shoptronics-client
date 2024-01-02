@@ -4,14 +4,22 @@ import { currencyFormatter } from "../utilites/currencyFormatter";
 import Rating from "./Rating";
 import Button from "./Button";
 import { useTitle } from "../hooks/useTitle";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+
+import { fetchProduct } from "../features/product/productSlice";
 
 const ProductItem = () => {
 
+  const dispatch=useDispatch();
+  const { pid} = useParams();
 
-  const { id: productId } = useParams();
+  useEffect(()=>{
+    dispatch(fetchProduct(pid))
+  },[pid,dispatch])
 
-  const product = products.find((p) => p._id === +productId);
-   // title
+  const {product,isLoading,isError,error}=useSelector((state)=>state.product)
+
    useTitle(`Product-${product.name}`)
   return (
     <section className="section-padding">
@@ -35,9 +43,9 @@ const ProductItem = () => {
           </h3>
           <h3 className="flex flex-row gap-5 text-lg ">
             {" "}
-            <span>Status:</span> <span className="font-semibold">{product.countInStock>0?"In Stock":<div className="text-red-400">Out of Stock</div>}</span>
+            <span>Status:</span> <span className="font-semibold">{product?.countInStock>0?"In Stock":<span className="text-red-400">Out of Stock</span>}</span>
           </h3>
-          <Rating value={product.rating} text={`${product.numReviews}`}/>
+          <Rating value={product.rating} reviewsNum={`${product.numReviews}`}/>
 
          <div className=" text-center mt-5 font-bold">
          <Button text={"AddTo Cart"} />

@@ -1,5 +1,5 @@
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
-const Rating = ({ value, text }) => {
+const Rating = ({ value, reviewsNum }) => {
   return (
     <div className="flex flex-row gap-2 items-center">
       <div className="flex flex-row gap-1 text-yellow-500">
@@ -53,7 +53,7 @@ const Rating = ({ value, text }) => {
         )}
       </span>
       </div>
-      <span>{text && text} reviews </span>
+      <span>{reviewsNum && reviewsNum} reviews </span>
     </div>
   );
 };
