@@ -12,30 +12,53 @@ import SignIn from "./pages/SignIn";
 import SignUp from './pages/SignUp'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css';
+import useAuthCheck from "./hooks/useAuthCheck";
 
 function App() {
+const authChecked=useAuthCheck();
 
-  return (
-    <>
-    <Navbar/>
-    <ToastContainer/>
-      <Routes>
-        <Route path="/" element={<Home/>}/>
+return !authChecked? (<div> Checking authentication ......</div>):(
+  <>
+  <Navbar/>
+  <ToastContainer/>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
 
-        <Route path="/products" element={<Products/>}/>
-        <Route path="/product/:pid" element={<ProductItem/>}/>
+      <Route path="/products" element={<Products/>}/>
+      <Route path="/product/:pid" element={<ProductItem/>}/>
 
-        <Route path="/about" element={<About/>}/>
-        <Route path="/contact" element={<Contact/>}/>
+      <Route path="/about" element={<About/>}/>
+      <Route path="/contact" element={<Contact/>}/>
 
-        <Route path="/sign-up" element={<SignUp/>}/>
-        <Route path="/sign-in" element={<SignIn/>}/>
+      <Route path="/sign-up" element={<SignUp/>}/>
+      <Route path="/sign-in" element={<SignIn/>}/>
+     
+      <Route path="*" element={<NotFound/>}/>
+    </Routes>
+   <Footer/>
+  </>
+)
+  // return (
+  //   <>
+  //   <Navbar/>
+  //   <ToastContainer/>
+  //     <Routes>
+  //       <Route path="/" element={<Home/>}/>
+
+  //       <Route path="/products" element={<Products/>}/>
+  //       <Route path="/product/:pid" element={<ProductItem/>}/>
+
+  //       <Route path="/about" element={<About/>}/>
+  //       <Route path="/contact" element={<Contact/>}/>
+
+  //       <Route path="/sign-up" element={<SignUp/>}/>
+  //       <Route path="/sign-in" element={<SignIn/>}/>
        
-        <Route path="*" element={<NotFound/>}/>
-      </Routes>
-     <Footer/>
-    </>
-  );
+  //       <Route path="*" element={<NotFound/>}/>
+  //     </Routes>
+  //    <Footer/>
+  //   </>
+  // );
 }
 
 export default App;
