@@ -5,10 +5,13 @@ import {
   AiOutlineMenu,
 } from "react-icons/ai";
 import { useState } from "react";
+import {useGetUsersProfileQuery} from "../features/users/usersApi"
 // import { BiUser } from "react-icons/bi";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+
+      const {data:user,isError,error}=useGetUsersProfileQuery();
 
   return (
     <header className="w-full h-20 border-b border-gray flex items-center bg-white/90 backdrop-blur-lg fixed z-50 top-0 right-0 left-0 ">

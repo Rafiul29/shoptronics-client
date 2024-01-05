@@ -13,6 +13,7 @@ import SignUp from './pages/SignUp'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css';
 import useAuthCheck from "./hooks/useAuthCheck";
+import PublicRoute from "./components/routes/PublicRoute";
 
 function App() {
 const authChecked=useAuthCheck();
@@ -30,8 +31,8 @@ return !authChecked? (<div> Checking authentication ......</div>):(
       <Route path="/about" element={<About/>}/>
       <Route path="/contact" element={<Contact/>}/>
 
-      <Route path="/sign-up" element={<SignUp/>}/>
-      <Route path="/sign-in" element={<SignIn/>}/>
+      <Route path="/sign-up" element={<PublicRoute><SignUp/></PublicRoute>}/>
+      <Route path="/sign-in" element={ <PublicRoute><SignIn/></PublicRoute>}/>
      
       <Route path="*" element={<NotFound/>}/>
     </Routes>

@@ -1,20 +1,20 @@
 import { apiSlice } from "../api/apiSlice";
 
-export const productsApi = apiSlice.injectEndpoints({
+export const categoriesApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     
     // get all products
-    getProducts: builder.query({
+    getAllCategories: builder.query({
       query: () => `/products/private`,
     }),
 
     // get Single product
-    getProduct: builder.query({
+    getSingleCategories: builder.query({
       query: (pid) => `/products/private/${pid}`,
     }),
 
     // add new product
-    addProduct:builder.mutation({
+    addCategories:builder.mutation({
       query:(data)=>({
         url:"/products/private",
         method:"POST",
@@ -23,7 +23,7 @@ export const productsApi = apiSlice.injectEndpoints({
     }),
 
     // update a product
-    updateProduct:builder.mutation({
+    updatecategories:builder.mutation({
       query:({pid,data})=>({
         url:`/products/private/${pid}`,
         method:"PUT",
@@ -32,7 +32,7 @@ export const productsApi = apiSlice.injectEndpoints({
     }),
 
     // delete product
-    deleteProduct:builder.mutation({
+    deleteCategories:builder.mutation({
       query:(pid)=>({
         url:`/products/private/${pid}`,
         method:"DELETE",
@@ -41,4 +41,4 @@ export const productsApi = apiSlice.injectEndpoints({
   }),
 });
 
-export const { useGetProductsQuery,useGetProductQuery,useAddProductMutation,useUpdateProductMutation,useDeleteProductMutation } = productsApi;
+export const {  } = categoriesApi;
