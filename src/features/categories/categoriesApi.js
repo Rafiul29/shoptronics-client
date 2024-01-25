@@ -2,10 +2,9 @@ import { apiSlice } from "../api/apiSlice";
 
 export const categoriesApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
-    
     // get all products
     getAllCategories: builder.query({
-      query: () => `/products/private`,
+      query: () => `/categories/private`,
     }),
 
     // get Single product
@@ -14,31 +13,36 @@ export const categoriesApi = apiSlice.injectEndpoints({
     }),
 
     // add new product
-    addCategories:builder.mutation({
-      query:(data)=>({
-        url:"/products/private",
-        method:"POST",
-        body:data,
-      })
+    createCategory: builder.mutation({
+      query: (data) => ({
+        url: "/categories/private",
+        method: "POST",
+        body: data,
+      }),
     }),
 
     // update a product
-    updatecategories:builder.mutation({
-      query:({pid,data})=>({
-        url:`/products/private/${pid}`,
-        method:"PUT",
-        body:data,
-      })
+    updatecategories: builder.mutation({
+      query: ({ pid, data }) => ({
+        url: `/products/private/${pid}`,
+        method: "PUT",
+        body: data,
+      }),
     }),
 
     // delete product
-    deleteCategories:builder.mutation({
-      query:(pid)=>({
-        url:`/products/private/${pid}`,
-        method:"DELETE",
-      })
-    })
+    deleteCategories: builder.mutation({
+      query: (pid) => ({
+        url: `/products/private/${pid}`,
+        method: "DELETE",
+      }),
+    }),
   }),
 });
 
-export const {  } = categoriesApi;
+export const {
+  useGetAllCategoriesQuery,
+  useCreateCategoryMutation,
+  useDeleteCategoriesMutation,
+  useGetSingleCategoriesQuery,
+} = categoriesApi;

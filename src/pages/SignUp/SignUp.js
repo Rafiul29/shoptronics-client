@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import { useTitle } from "../hooks/useTitle";
-import { useRegisterMutation } from "../features/auth/authApi";
-import Error from "../components/ui/Error";
+import { useTitle } from "../../hooks/useTitle";
+import { useRegisterMutation } from "../../features/auth/authApi";
+import Error from "../../components/ui/Error";
 
 const SignUp = () => {
   // title

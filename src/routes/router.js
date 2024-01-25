@@ -1,13 +1,20 @@
 import { createBrowserRouter } from "react-router-dom";
-import { MainLayout } from "../components/Layout/MainLayout";
-import Home from "../pages/Home";
-import SignUp from "../pages/SignUp";
-import SignIn from "../pages/SignIn";
-import NotFound from "../pages/NotFound";
+import MainLayout  from "../Layout/MainLayout";
+import DashBoardLayout from "../Layout/DashBoardLayout";
 
-import About from '../pages/About';
-import Contact from '../pages/Contact';
+import Home from "../pages/Home/Home";
+import SignUp from "../pages/SignUp/SignUp";
+import SignIn from "../pages/SignIn/SignIn";
+import NotFound from "../pages/NotFound/NotFound";
+import About from '../pages/About/About';
+import Contact from '../pages/Contact/Contact';
+
 import PublicRoute from "./PublicRoute";
+import Products from "../pages/Products/Products";
+
+import AllCategories from "../components/DashBoard/ManageCategories/AllCategories/AllCategories";
+import AddCategory from "../components/DashBoard/ManageCategories/AddCategory/AddCategory";
+
 
 
 export const router = createBrowserRouter([
@@ -18,6 +25,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/products",
+        element: <Products />,
       },
       {
         path: "/about",
@@ -48,5 +59,23 @@ export const router = createBrowserRouter([
         element: <NotFound />,
       },
     ],
+  },
+  {
+    path: "/dashboard",
+    element: <DashBoardLayout />,
+    children: [
+      {
+        path: "/dashboard/category",
+        element: <AllCategories />,
+      },
+      {
+        path: "/dashboard/manage-category",
+        element: <AllCategories />,
+      },
+      {
+        path: "/dashboard/add-category",
+        element: <AddCategory />,
+      },
+    ]
   },
 ]);

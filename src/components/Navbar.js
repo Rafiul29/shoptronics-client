@@ -5,7 +5,7 @@ import {
   AiOutlineMenu,
 } from "react-icons/ai";
 import { useState } from "react";
-import { useGetUsersProfileQuery } from "../features/users/usersApi";
+// import { useGetUsersProfileQuery } from "../features/users/usersApi";
 import { useDispatch } from "react-redux";
 import { userLoggedOut } from "../features/auth/authSlice";
 // import { BiUser } from "react-icons/bi";
@@ -72,19 +72,25 @@ const Navbar = () => {
               <AiOutlineShoppingCart /> Cart
             </Link>
 
-          {!isLoggedIn &&(  <Link
-              to="/sign-in"
-              className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
-            >
-              Sign In
-            </Link>)}
+            {!isLoggedIn && (
+              <Link
+                to="/sign-in"
+                className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
+              >
+                Sign In
+              </Link>
+            )}
 
-            {isLoggedIn &&( <button
-            onClick={signOut}
-              className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
-            >
-              Signout
-            </button>)}
+            {isLoggedIn && (
+              <button
+                onClick={signOut}
+                className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
+              >
+                Signout
+              </button>
+            )}
+            
+
           </div>
         </div>
 

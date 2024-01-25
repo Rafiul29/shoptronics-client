@@ -1,5 +1,5 @@
-import { useTitle } from "../hooks/useTitle";
-import Products from "./Products"
+import { useTitle } from "../../hooks/useTitle";
+import Products from "../Products/Products"
 
 const Home = () => {
    // title

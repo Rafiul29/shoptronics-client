@@ -1,10 +1,10 @@
-import SectionTitle from "../components/SectionTitle";
+import SectionTitle from "../../components/SectionTitle";
 import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import emailjs from "@emailjs/browser"
 import { useRef } from "react";
 import { toast } from "react-toastify";
-import {useTitle} from "../hooks/useTitle";
+import {useTitle} from "../../hooks/useTitle";
 
 const Contact = () => {
 
@@ -74,7 +74,7 @@ const Contact = () => {
                 id="name"
                 required
                 name="from_name"
-                className="w-full border rounded-md py-4 px-5 focus:outline-none focus:border-blue-500"
+                className="w-full border rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
                 placeholder="Enter your name"
               />
             </div>
@@ -92,7 +92,7 @@ const Contact = () => {
                 id="email"
                 required
                 name="from_email"
-                className="w-full border rounded-md py-4 px-5 focus:outline-none focus:border-blue-500"
+                className="w-full border rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
                 placeholder="Enter your email"
               />
             </div>
@@ -110,7 +110,7 @@ const Contact = () => {
                 name="message"
                 rows="3"
                 required
-                className="w-full border rounded-md py-4 px-5 focus:outline-none focus:border-blue-500"
+                className="w-full border rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
                 placeholder="Enter your message"
               ></textarea>
             </div>

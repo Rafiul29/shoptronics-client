@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa";
-import { useTitle } from "../hooks/useTitle";
-import { useLoginMutation } from "../features/auth/authApi";
-import Error from "../components/ui/Error";
+import { useTitle } from "../../hooks/useTitle";
+import { useLoginMutation } from "../../features/auth/authApi";
+import Error from "../../components/ui/Error";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");

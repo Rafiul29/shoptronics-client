@@ -1,10 +1,10 @@
 import { Link, useParams } from "react-router-dom";
-import { currencyFormatter } from "../utilites/currencyFormatter";
-import Rating from "./Rating";
-import Button from "./Button";
-import { useTitle } from "../hooks/useTitle";
+import { currencyFormatter } from "../../utilites/currencyFormatter";
+import Rating from "../Rating";
+import Button from "../Button";
+import { useTitle } from "../../hooks/useTitle";
 import { useDispatch, useSelector } from "react-redux";
-import { useGetProductQuery } from "../features/products/productsApi";
+import { useGetProductQuery } from "../../features/products/productsApi";
 
 const ProductItem = () => {
 
