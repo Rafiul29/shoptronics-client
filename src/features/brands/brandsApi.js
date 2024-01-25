@@ -4,18 +4,18 @@ export const brandsApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     // get all products
     getAllBrands: builder.query({
-      query: () => `/products/private`,
+      query: () => "/brands/private",
     }),
 
     // get Single product
     getSigleBrand: builder.query({
-      query: (pid) => `/products/private/${pid}`,
+      query: (pid) => `/brands/private/${pid}`,
     }),
 
     // add new product
-    addBrand: builder.mutation({
+    createBrand: builder.mutation({
       query: (data) => ({
-        url: "/products/private",
+        url: "/brands/private",
         method: "POST",
         body: data,
       }),
@@ -24,7 +24,7 @@ export const brandsApi = apiSlice.injectEndpoints({
     // update a product
     updateBrand: builder.mutation({
       query: ({ pid, data }) => ({
-        url: `/products/private/${pid}`,
+        url: `/brands/private/${pid}`,
         method: "PUT",
         body: data,
       }),
@@ -33,11 +33,11 @@ export const brandsApi = apiSlice.injectEndpoints({
     // delete product
     deleteBrand: builder.mutation({
       query: (pid) => ({
-        url: `/products/private/${pid}`,
+        url: `brands/private//${pid}`,
         method: "DELETE",
       }),
     }),
   }),
 });
 
-export const {} = brandsApi;
+export const {useCreateBrandMutation,useGetAllBrandsQuery,useDeleteBrandMutation,useGetSigleBrandQuery} = brandsApi;
