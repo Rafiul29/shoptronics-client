@@ -23,11 +23,11 @@ const SignUp = () => {
 
   useEffect(() => {
     if (responseError?.data) {
-      setError(responseError.data);
+      setError(responseError?.data);
     }
 
     if (data?.token && data?.user) {
-      navigate("/sign-in");
+      navigate("/");
     }
   }, [data, responseError, navigate]);
 

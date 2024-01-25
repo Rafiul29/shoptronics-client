@@ -1,17 +1,37 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   AiOutlineShoppingCart,
   AiOutlineClose,
   AiOutlineMenu,
 } from "react-icons/ai";
 import { useState } from "react";
-import {useGetUsersProfileQuery} from "../features/users/usersApi"
+import { useGetUsersProfileQuery } from "../features/users/usersApi";
+import { useDispatch } from "react-redux";
+import { userLoggedOut } from "../features/auth/authSlice";
 // import { BiUser } from "react-icons/bi";
+import useAuth from "../hooks/useAuth";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
-      const {data:user,isError,error}=useGetUsersProfileQuery();
+  const isLoggedIn = useAuth();
+
+  const dispatch = useDispatch();
+  const naviagate = useNavigate();
+  const signOut = () => {
+    localStorage.removeItem("auth");
+    dispatch(
+      userLoggedOut({
+        token: undefined,
+        user: undefined,
+      })
+    );
+    naviagate("/sign-in");
+  };
+
+  // const {data:user,isError,error}=useGetUsersProfileQuery();
+
+  // console.log(user)
 
   return (
     <header className="w-full h-20 border-b border-gray flex items-center bg-white/90 backdrop-blur-lg fixed z-50 top-0 right-0 left-0 ">
@@ -52,12 +72,19 @@ const Navbar = () => {
               <AiOutlineShoppingCart /> Cart
             </Link>
 
-            <Link
+          {!isLoggedIn &&(  <Link
               to="/sign-in"
               className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
             >
               Sign In
-            </Link>
+            </Link>)}
+
+            {isLoggedIn &&( <button
+            onClick={signOut}
+              className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
+            >
+              Signout
+            </button>)}
           </div>
         </div>
 
