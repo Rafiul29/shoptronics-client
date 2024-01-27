@@ -1,4 +1,4 @@
-import SectionTitle from "../../components/SectionTitle";
+import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import emailjs from "@emailjs/browser"

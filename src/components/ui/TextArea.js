@@ -6,7 +6,7 @@ export default function TextArea({ title, ...attributes }) {
         <textarea
           {...attributes}
           rows="3"
-          className="shadow-sm focus:deep-purple-500 focus:border-deep-purple-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
+          className="shadow-sm py-2 px-3 focus:outline-none focus:border-blue-500  mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
         ></textarea>
       </div>
       <p className="mt-2 text-sm text-gray-500">

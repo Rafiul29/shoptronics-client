@@ -6,7 +6,7 @@ export default function TextInput({ title, ...attributes }) {
       </label>
       <input
         required
-        className="border rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+        className="w-full border rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
         {...attributes}
       />
     </>

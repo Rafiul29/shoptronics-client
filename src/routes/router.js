@@ -16,6 +16,8 @@ import AllCategories from "../components/DashBoard/ManageCategories/AllCategorie
 import AddCategory from "../components/DashBoard/ManageCategories/AddCategory/AddCategory";
 import AllBarands from "../components/DashBoard/ManageBrands/AllBrands/AllBarands";
 import AddBrand from '../components/DashBoard/ManageBrands/AddBrand/AddBrand';
+import AllProducts from "../components/DashBoard/ManageProducts/AllProducts/AllProducts";
+import AddProduct from "../components/DashBoard/ManageProducts/AddProduct/AddProduct";
 
 
 
@@ -67,7 +69,15 @@ export const router = createBrowserRouter([
     element: <DashBoardLayout />,
     children: [
       {
-        path: "/dashboard/manage-category",
+        path: "/dashboard/manage-products",
+        element: <AllProducts />,
+      },
+      {
+        path: "/dashboard/add-product",
+        element: <AddProduct />,
+      },
+      {
+        path: "/dashboard/manage-categories",
         element: <AllCategories />,
       },
       {
@@ -75,7 +85,7 @@ export const router = createBrowserRouter([
         element: <AddCategory />,
       },
       {
-        path: "/dashboard/manage-brand",
+        path: "/dashboard/manage-brands",
         element: <AllBarands />,
       },
       {
