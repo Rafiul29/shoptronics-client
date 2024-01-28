@@ -1,10 +1,10 @@
-import SectionTitle from "../../components/SectionTitle/SectionTitle";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
-import emailjs from "@emailjs/browser"
-import { useRef } from "react";
 import { toast } from "react-toastify";
-import {useTitle} from "../../hooks/useTitle";
+import SectionTitle from "../../components/SectionTitle/SectionTitle";
+import { useTitle } from "../../hooks/useTitle";
 
 const Contact = () => {
 
@@ -117,7 +117,7 @@ const Contact = () => {
 
             <button
               type="submit"
-              className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
+              className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 duration-500"
             >
               Submit
             </button>

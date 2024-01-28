@@ -1,10 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import {
-  AiOutlineShoppingCart,
   AiOutlineClose,
   AiOutlineMenu,
+  AiOutlineShoppingCart,
 } from "react-icons/ai";
-import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 // import { useGetUsersProfileQuery } from "../features/users/usersApi";
 import { useDispatch } from "react-redux";
 import { userLoggedOut } from "../features/auth/authSlice";
@@ -75,7 +75,7 @@ const Navbar = () => {
             {!isLoggedIn && (
               <Link
                 to="/sign-in"
-                className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
+                className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 duration-500"
               >
                 Sign In
               </Link>
@@ -84,7 +84,7 @@ const Navbar = () => {
             {isLoggedIn && (
               <button
                 onClick={signOut}
-                className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
+                className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 duration-500"
               >
                 Signout
               </button>

@@ -18,6 +18,7 @@ import AllBarands from "../components/DashBoard/ManageBrands/AllBrands/AllBarand
 import AddBrand from '../components/DashBoard/ManageBrands/AddBrand/AddBrand';
 import AllProducts from "../components/DashBoard/ManageProducts/AllProducts/AllProducts";
 import AddProduct from "../components/DashBoard/ManageProducts/AddProduct/AddProduct";
+import UpdateProduct from "../components/DashBoard/ManageProducts/UpdateProduct/UpdateProduct";
 
 
 
@@ -75,6 +76,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/add-product",
         element: <AddProduct />,
+      },
+      {
+        path: "/dashboard/update-product/:pid",
+        element: <UpdateProduct />,
       },
       {
         path: "/dashboard/manage-categories",
