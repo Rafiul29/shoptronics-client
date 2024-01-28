@@ -1,6 +1,6 @@
-const TableHeader = ({title}) => {
+const TableHeader = ({title,col=1}) => {
   return (
-    <th scope="col" className="px-6 py-3">
+    <th colSpan={col} scope="col" className="px-6 py-3">
      {title}
     </th>
   );
