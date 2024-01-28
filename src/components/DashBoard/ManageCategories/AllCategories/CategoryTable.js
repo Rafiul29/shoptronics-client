@@ -2,25 +2,26 @@ import { useEffect } from "react";
 import { FaRegEdit } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
 import { toast } from "react-toastify";
-import { useGetAllCategoriesQuery } from "../../../../features/categories/categoriesApi";
-import { useDeleteProductMutation } from "../../../../features/products/productsApi";
+import {
+  useDeleteCategoryMutation,
+  useGetAllCategoriesQuery,
+} from "../../../../features/categories/categoriesApi";
 import TableData from "../../../Table/TableData";
 import TableHeader from "../../../Table/TableHeader";
 import { TableLinkData } from "../../../Table/TableLinkData";
 import Error from "../../../ui/Error";
 
 const CategoryTable = () => {
-  const [deleteProduct, { data: resProduct }] = useDeleteProductMutation();
+  const [deleteCategory, { data: resCagtegory }] = useDeleteCategoryMutation();
   //delete product;
-  const handleDelete = (pid) => {
-    console.log(pid);
-    deleteProduct(pid);
+  const handleDelete = (cid) => {
+    deleteCategory(cid);
   };
 
   // toast message
   useEffect(() => {
-    if (resProduct?._id) {
-      toast.info("product delect successfully", {
+    if (resCagtegory?._id) {
+      toast.info("category delect successfully", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -31,8 +32,8 @@ const CategoryTable = () => {
         theme: "light",
       });
     }
-    if (resProduct?.message) {
-      toast.error(`${resProduct?.message}`, {
+    if (resCagtegory?.message) {
+      toast.error(`${resCagtegory?.message}`, {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -43,7 +44,7 @@ const CategoryTable = () => {
         theme: "light",
       });
     }
-  }, [resProduct]);
+  }, [resCagtegory]);
 
   //get all categories
   const { data: categories, isLoading, isError } = useGetAllCategoriesQuery();
