@@ -3,22 +3,34 @@ import { useEffect, useState } from "react";
 import TextArea from "../../../ui/TextArea";
 import { useGetAllCategoriesQuery } from "../../../../features/categories/categoriesApi";
 import { useGetAllBrandsQuery } from "../../../../features/brands/brandsApi";
-import { useAddProductMutation } from "../../../../features/products/productsApi";
+import { useUpdateProductMutation } from "../../../../features/products/productsApi";
 import { toast } from "react-toastify";
 import { useTitle } from "../../../../hooks/useTitle";
+import { useNavigate } from "react-router-dom";
 
-const Form = () => {
-
+const Form = ({ product }) => {
   // page title
-  useTitle("add product")
+  useTitle("update product");
 
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [image_link, setImage_link] = useState("");
-  const [price, setPrice] = useState("");
-  const [totalQty, setTotalQty] = useState("");
-  const [categoryId, setCategoryId] = useState("");
-  const [brandId, setBrandId] = useState("");
+  const {
+    _id: pid,
+    title: initialTitle,
+    description: initialDescription,
+    image_link: initialImageLink,
+    price: initialPrice,
+    totalQty: initialTotalQty,
+    categoryId: initialCategoryId,
+    brandId: initialBrandId,
+  } = product;
+
+  //all states
+  const [title, setTitle] = useState(initialTitle);
+  const [description, setDescription] = useState(initialDescription);
+  const [image_link, setImage_link] = useState(initialImageLink);
+  const [price, setPrice] = useState(initialPrice);
+  const [totalQty, setTotalQty] = useState(initialTotalQty);
+  const [categoryId, setCategoryId] = useState(initialCategoryId?._id);
+  const [brandId, setBrandId] = useState(initialBrandId?._id);
 
   // get all categories
   const { data: categories } = useGetAllCategoriesQuery();
@@ -26,37 +38,31 @@ const Form = () => {
   // get all brands
   const { data: brands } = useGetAllBrandsQuery();
 
-  const [addProduct, { data: resProduct, isLoading }] = useAddProductMutation();
+  const [updateProduct, { data: resProduct, isLoading }] =
+    useUpdateProductMutation();
 
-  // reset form
-  const resetForm = () => {
-    setTitle("");
-    setDescription("");
-    setImage_link("");
-    setBrandId("");
-    setCategoryId("");
-    setPrice("");
-    setTotalQty("");
-  };
   //submit form
   const handleSubmit = (e) => {
     e.preventDefault();
-    addProduct({
-      title,
-      description,
-      image_link,
-      price,
-      totalQty,
-      categoryId,
-      brandId,
+    updateProduct({
+      pid,
+      data: {
+        title,
+        description,
+        image_link,
+        price,
+        totalQty,
+        categoryId,
+        brandId,
+      },
     });
-    resetForm();
   };
 
+  const navigate=useNavigate();
   // toast message
   useEffect(() => {
     if (resProduct?._id) {
-      toast.info("product added successfully", {
+      toast.info("product update successfully", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -66,6 +72,7 @@ const Form = () => {
         progress: undefined,
         theme: "light",
       });
+      navigate('/dashboard/manage-products')
     }
     if (resProduct?.message) {
       toast.error(`${resProduct?.message}`, {
@@ -79,7 +86,7 @@ const Form = () => {
         theme: "light",
       });
     }
-  }, [resProduct]);
+  }, [resProduct,navigate]);
 
   return (
     <form onSubmit={handleSubmit}>
@@ -122,7 +129,6 @@ const Form = () => {
                 onChange={(e) => setBrandId(e.target.value)}
                 className="mt-1  block w-full rounded-md border-gray-300 py-2  pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm border"
               >
-                <option>-- Select brand --</option>
                 {brands?.length > 0 &&
                   brands?.map((brand) => (
                     <option key={brand?._id} value={brand?._id}>
@@ -143,11 +149,10 @@ const Form = () => {
                 onChange={(e) => setCategoryId(e.target.value)}
                 className="mt-1  block w-full rounded-md border-gray-300 py-2  pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm border"
               >
-                <option>-- select category --</option>
                 {categories?.length > 0 &&
                   categories?.map((category) => (
                     <option key={category?._id} value={category?._id}>
-                      {category.name}
+                      {category?.name}
                     </option>
                   ))}
               </select>

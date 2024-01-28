@@ -15,7 +15,6 @@ const AddCategory = () => {
     });
   };
 
-  console.log(data);
   return (
     <section className="section-padding mt-20">
       <div className="wrapper">

@@ -9,7 +9,7 @@ export const productsApi = apiSlice.injectEndpoints({
     }),
 
     // get Single product
-    getProduct: builder.query({
+    getSingleProduct: builder.query({
       query: (pid) => `/products/private/${pid}`,
     }),
 
@@ -41,4 +41,4 @@ export const productsApi = apiSlice.injectEndpoints({
   }),
 });
 
-export const { useGetProductsQuery,useGetProductQuery,useAddProductMutation,useUpdateProductMutation,useDeleteProductMutation } = productsApi;
+export const { useGetProductsQuery,useGetSingleProductQuery,useAddProductMutation,useUpdateProductMutation,useDeleteProductMutation } = productsApi;

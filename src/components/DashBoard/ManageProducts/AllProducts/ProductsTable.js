@@ -13,7 +13,6 @@ const ProductsTable = () => {
   useTitle("All products");
   const { data: products, isError, isLoading } = useGetProductsQuery();
 
-  console.log(products);
   //decide what to do render;
   let content = null;
   if (isLoading) {
@@ -64,7 +63,7 @@ const ProductsTable = () => {
 
                   <td
                     // onClick={() => handleDelete(course._id)}
-                    className="text-red-400 px-5 text-2xl py-2 font-sans cursor-pointer"
+                    className="text-rose-500 px-5 text-2xl hover:text-rose-400  py-2 font-sans cursor-pointer duration-500"
                   >
                     <MdDeleteForever />
                   </td>
