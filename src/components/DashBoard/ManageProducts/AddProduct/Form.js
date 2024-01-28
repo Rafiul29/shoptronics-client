@@ -8,9 +8,8 @@ import { toast } from "react-toastify";
 import { useTitle } from "../../../../hooks/useTitle";
 
 const Form = () => {
-
   // page title
-  useTitle("add product")
+  useTitle("add product");
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
