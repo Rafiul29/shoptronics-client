@@ -1,3 +1,4 @@
+import Products from "../../components/Products/Products";
 import { useTitle } from "../../hooks/useTitle";
 // import Products from "../Products/Products"
 
@@ -9,7 +10,7 @@ const Home = () => {
   return (
    <>
     <main>
-      {/* <Products/> */}
+    <Products/>
     </main>
    </>
   )

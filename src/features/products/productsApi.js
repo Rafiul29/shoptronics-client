@@ -5,7 +5,7 @@ export const productsApi = apiSlice.injectEndpoints({
     
     // get all products
     getProducts: builder.query({
-      query: () => `/products/private`,
+      query: (setUrl="") => `/products/private/${setUrl}`,
     }),
 
     // get Single product
