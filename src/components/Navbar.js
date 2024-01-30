@@ -10,12 +10,15 @@ import { useDispatch } from "react-redux";
 import { userLoggedOut } from "../features/auth/authSlice";
 // import { BiUser } from "react-icons/bi";
 import useAuth from "../hooks/useAuth";
+import useAuthAdmin from "../hooks/useAuthAdmin";
+
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const isLoggedIn = useAuth();
-
+  const isAdmin = useAuthAdmin();
+  
   const dispatch = useDispatch();
   const naviagate = useNavigate();
   const signOut = () => {
@@ -81,6 +84,15 @@ const Navbar = () => {
               </Link>
             )}
 
+            {isAdmin && (
+              <Link
+                to="/dashboard/manage-products"
+                className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 duration-500"
+              >
+               Dashboard
+              </Link>
+            )}
+
             {isLoggedIn && (
               <button
                 onClick={signOut}
@@ -89,8 +101,6 @@ const Navbar = () => {
                 Signout
               </button>
             )}
-            
-
           </div>
         </div>
 

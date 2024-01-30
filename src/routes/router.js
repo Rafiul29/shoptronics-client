@@ -10,7 +10,6 @@ import About from '../pages/About/About';
 import Contact from '../pages/Contact/Contact';
 
 import PublicRoute from "./PublicRoute";
-import Products from "../pages/Products/Products";
 
 import AllCategories from "../components/Dashboard/ManageCategories/AllCategories/AllCategories";
 import AddCategory from "../components/Dashboard/ManageCategories/AddCategory/AddCategory";
@@ -21,6 +20,7 @@ import AddProduct from "../components/Dashboard/ManageProducts/AddProduct/AddPro
 import UpdateProduct from "../components/Dashboard/ManageProducts/UpdateProduct/UpdateProduct";
 import UpdateCategory from "../components/Dashboard/ManageCategories/UpdateCategory/UpdateCategory";
 import UpdateBrand from "../components/Dashboard/ManageBrands/UpdateBarand/UpdateBrand";
+import ProductPages from "../pages/Products/ProductPages";
 
 
 
@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/products",
-        element: <Products />,
+        element: <ProductPages />,
       },
       {
         path: "/about",
