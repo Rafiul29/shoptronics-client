@@ -21,7 +21,7 @@ const AllProducts = () => {
               <span>
                 <FaPlus />
               </span>
-              <span> add course</span>
+              <span> add product</span>
             </Link>
           </div>
           <ProductsTable />

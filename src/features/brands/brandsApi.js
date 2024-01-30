@@ -9,7 +9,7 @@ export const brandsApi = apiSlice.injectEndpoints({
 
     // get Single product
     getSigleBrand: builder.query({
-      query: (pid) => `/brands/private/${pid}`,
+      query: (bid) => `/brands/private/${bid}`,
     }),
 
     // add new product
@@ -23,8 +23,8 @@ export const brandsApi = apiSlice.injectEndpoints({
 
     // update a product
     updateBrand: builder.mutation({
-      query: ({ pid, data }) => ({
-        url: `/brands/private/${pid}`,
+      query: ({ bid, data }) => ({
+        url: `/brands/private/${bid}`,
         method: "PUT",
         body: data,
       }),
@@ -32,8 +32,8 @@ export const brandsApi = apiSlice.injectEndpoints({
 
     // delete product
     deleteBrand: builder.mutation({
-      query: (pid) => ({
-        url: `brands/private//${pid}`,
+      query: (bid) => ({
+        url: `brands/private//${bid}`,
         method: "DELETE",
       }),
     }),
