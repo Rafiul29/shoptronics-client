@@ -1,7 +1,7 @@
 import { FaPlus } from "react-icons/fa";
 
-import { useTitle } from "../../../../hooks/useTitle";
 import { Link } from "react-router-dom";
+import { useTitle } from "../../../../hooks/useTitle";
 import TableTitle from "../../../Table/TableTitle";
 import ProductsTable from "./ProductsTable";
 
@@ -21,7 +21,7 @@ const AllProducts = () => {
               <span>
                 <FaPlus />
               </span>
-              <span> Add Courses</span>
+              <span> add course</span>
             </Link>
           </div>
           <ProductsTable />

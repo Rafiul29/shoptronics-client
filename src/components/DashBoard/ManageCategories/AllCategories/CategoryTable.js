@@ -68,7 +68,7 @@ const CategoryTable = () => {
             <tr>
               <TableHeader title="SN" />
               <TableHeader title="Name" col={2} />
-              <TableHeader title="Number of Product" />
+              <TableHeader title="No. Products" />
               <TableHeader title="Update" />
               <TableHeader title="Delete" />
               <TableHeader title="Date" />

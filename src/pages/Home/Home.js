@@ -2,8 +2,9 @@ import { useTitle } from "../../hooks/useTitle";
 import Products from "../Products/Products"
 
 const Home = () => {
-   // title
-   useTitle("Home")
+   // title  
+    useTitle("")
+
    
   return (
    <>

@@ -1,14 +1,13 @@
 import React from "react";
 import { FaPlus } from "react-icons/fa";
-import TableTitle from "../../../Table/TableTitle";
 import { Link } from "react-router-dom";
 import { useTitle } from "../../../../hooks/useTitle";
+import TableTitle from "../../../Table/TableTitle";
 import CategoryTable from "./CategoryTable";
 
 const AllCategories = () => {
-
   // page title
-  useTitle('All category');
+  useTitle("All category");
 
   return (
     <section className="section-padding mt-10">
@@ -23,10 +22,10 @@ const AllCategories = () => {
               <span>
                 <FaPlus />
               </span>
-              <span> Add Category</span>
+              <span> add category</span>
             </Link>
           </div>
-            <CategoryTable/>
+          <CategoryTable />
         </div>
       </div>
     </section>
