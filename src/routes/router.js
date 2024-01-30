@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout  from "../Layout/MainLayout";
-import DashBoardLayout from "../Layout/DashBoardLayout";
+import DashBoardLayout from "../Layout/DashboardLayout";
 
 import Home from "../pages/Home/Home";
 import SignUp from "../pages/SignUp/SignUp";
@@ -12,13 +12,13 @@ import Contact from '../pages/Contact/Contact';
 import PublicRoute from "./PublicRoute";
 import Products from "../pages/Products/Products";
 
-import AllCategories from "../components/DashBoard/ManageCategories/AllCategories/AllCategories";
-import AddCategory from "../components/DashBoard/ManageCategories/AddCategory/AddCategory";
-import AllBarands from "../components/DashBoard/ManageBrands/AllBrands/AllBarands";
-import AddBrand from '../components/DashBoard/ManageBrands/AddBrand/AddBrand';
-import AllProducts from "../components/DashBoard/ManageProducts/AllProducts/AllProducts";
-import AddProduct from "../components/DashBoard/ManageProducts/AddProduct/AddProduct";
-import UpdateProduct from "../components/DashBoard/ManageProducts/UpdateProduct/UpdateProduct";
+import AllCategories from "../components/Dashboard/ManageCategories/AllCategories/AllCategories";
+import AddCategory from "../components/Dashboard/ManageCategories/AddCategory/AddCategory";
+import AllBarands from "../components/Dashboard/ManageBrands/AllBrands/AllBarands";
+import AddBrand from '../components/Dashboard/ManageBrands/AddBrand/AddBrand';
+import AllProducts from "../components/Dashboard/ManageProducts/AllProducts/AllProducts";
+import AddProduct from "../components/Dashboard/ManageProducts/AddProduct/AddProduct";
+import UpdateProduct from "../components/Dashboard/ManageProducts/UpdateProduct/UpdateProduct";
 
 
 
