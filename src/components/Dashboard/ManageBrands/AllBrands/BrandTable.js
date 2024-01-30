@@ -84,7 +84,7 @@ const BrandTable = () => {
                   <TableData data={barand?.products.length} />
                   <TableLinkData
                     data={<FaRegEdit className="" />}
-                    link={`/dashboard/update-product/${barand?._id}`}
+                    link={`/dashboard/update-brand/${barand?._id}`}
                   />
 
                   <td

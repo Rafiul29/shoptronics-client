@@ -40,4 +40,4 @@ export const brandsApi = apiSlice.injectEndpoints({
   }),
 });
 
-export const {useCreateBrandMutation,useGetAllBrandsQuery,useDeleteBrandMutation,useGetSigleBrandQuery} = brandsApi;
+export const {useCreateBrandMutation,useGetAllBrandsQuery,useDeleteBrandMutation,useGetSigleBrandQuery,useUpdateBrandMutation} = brandsApi;
