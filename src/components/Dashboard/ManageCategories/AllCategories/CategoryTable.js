@@ -86,7 +86,7 @@ const CategoryTable = () => {
                   <TableData data={category?.products.length} />
                   <TableLinkData
                     data={<FaRegEdit className="" />}
-                    link={`/dashboard/update-product/${category?._id}`}
+                    link={`/dashboard/update-category/${category?._id}`}
                   />
 
                   <td

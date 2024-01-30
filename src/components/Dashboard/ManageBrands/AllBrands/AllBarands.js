@@ -1,5 +1,4 @@
 import React from 'react'
-import { useGetAllBrandsQuery } from '../../../../features/brands/brandsApi';
 import { useTitle } from '../../../../hooks/useTitle';
 import TableTitle from '../../../Table/TableTitle';
 import { Link } from 'react-router-dom';

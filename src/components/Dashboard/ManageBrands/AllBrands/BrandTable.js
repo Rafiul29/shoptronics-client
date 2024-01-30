@@ -2,10 +2,6 @@ import { useEffect } from "react";
 import { FaRegEdit } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
 import { toast } from "react-toastify";
-import {
-  useDeleteCategoryMutation,
-  useGetAllCategoriesQuery,
-} from "../../../../features/categories/categoriesApi";
 import TableData from "../../../Table/TableData";
 import TableHeader from "../../../Table/TableHeader";
 import { TableLinkData } from "../../../Table/TableLinkData";

@@ -19,6 +19,7 @@ import AddBrand from '../components/Dashboard/ManageBrands/AddBrand/AddBrand';
 import AllProducts from "../components/Dashboard/ManageProducts/AllProducts/AllProducts";
 import AddProduct from "../components/Dashboard/ManageProducts/AddProduct/AddProduct";
 import UpdateProduct from "../components/Dashboard/ManageProducts/UpdateProduct/UpdateProduct";
+import UpdateCategory from "../components/Dashboard/ManageCategories/UpdateCategory/UpdateCategory";
 
 
 
@@ -88,6 +89,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/add-category",
         element: <AddCategory />,
+      },
+      {
+        path: "/dashboard/update-category/:cid",
+        element: <UpdateCategory />,
       },
       {
         path: "/dashboard/manage-brands",
