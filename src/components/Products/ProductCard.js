@@ -13,9 +13,9 @@ const ProductCard = ({ product }) => {
       </div>
       <div className="texts flex flex-col gap-2 px-4 pb-5">
         <span className="catagory-tag text-xl uppercase  font-semibold tracking-widest text-teal-500">
-          {product.categoryId.name}
+          {product?.brandId?.name}
         </span>
-        <h3 className="title text-md font-medium h-[3.5rem] overflow-hidden ">
+        <h3 className="title text-md font-medium h-[4.5rem] overflow-hidden ">
           {product.title}
         </h3>
         <p className="details text-sm text-gray-500 h-[4.8rem] overflow-hidden ">

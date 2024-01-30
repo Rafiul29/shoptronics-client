@@ -1,28 +1,27 @@
 import { createBrowserRouter } from "react-router-dom";
-import MainLayout  from "../Layout/MainLayout";
+import MainLayout from "../Layout/MainLayout";
 import DashBoardLayout from "../Layout/DashboardLayout";
 
 import Home from "../pages/Home/Home";
 import SignUp from "../pages/SignUp/SignUp";
 import SignIn from "../pages/SignIn/SignIn";
 import NotFound from "../pages/NotFound/NotFound";
-import About from '../pages/About/About';
-import Contact from '../pages/Contact/Contact';
+import About from "../pages/About/About";
+import Contact from "../pages/Contact/Contact";
 
 import PublicRoute from "./PublicRoute";
 
 import AllCategories from "../components/Dashboard/ManageCategories/AllCategories/AllCategories";
 import AddCategory from "../components/Dashboard/ManageCategories/AddCategory/AddCategory";
 import AllBarands from "../components/Dashboard/ManageBrands/AllBrands/AllBarands";
-import AddBrand from '../components/Dashboard/ManageBrands/AddBrand/AddBrand';
+import AddBrand from "../components/Dashboard/ManageBrands/AddBrand/AddBrand";
 import AllProducts from "../components/Dashboard/ManageProducts/AllProducts/AllProducts";
 import AddProduct from "../components/Dashboard/ManageProducts/AddProduct/AddProduct";
 import UpdateProduct from "../components/Dashboard/ManageProducts/UpdateProduct/UpdateProduct";
 import UpdateCategory from "../components/Dashboard/ManageCategories/UpdateCategory/UpdateCategory";
 import UpdateBrand from "../components/Dashboard/ManageBrands/UpdateBarand/UpdateBrand";
 import ProductPages from "../pages/Products/ProductPages";
-
-
+import ProductItem from "../components/Products/ProductItem";
 
 export const router = createBrowserRouter([
   {
@@ -37,6 +36,11 @@ export const router = createBrowserRouter([
         path: "/products",
         element: <ProductPages />,
       },
+      {
+        path: "/product/:pid",
+        element: <ProductItem />,
+      },
+
       {
         path: "/about",
         element: <About />,
@@ -107,6 +111,6 @@ export const router = createBrowserRouter([
         path: "/dashboard/update-brand/:bid",
         element: <UpdateBrand />,
       },
-    ]
+    ],
   },
 ]);
