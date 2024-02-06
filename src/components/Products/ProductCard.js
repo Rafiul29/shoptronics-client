@@ -12,7 +12,7 @@ const ProductCard = ({ product }) => {
         />
       </div>
       <div className="texts flex flex-col gap-2 px-4 pb-5">
-        <span className="catagory-tag text-xl uppercase  font-semibold tracking-widest text-teal-500">
+        <span className="catagory-tag text-xl uppercase  font-medium tracking-widest text-teal-500">
           {product?.brandId?.name}
         </span>
         <h3 className="title text-md font-medium h-[4.5rem] overflow-hidden ">

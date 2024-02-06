@@ -22,6 +22,8 @@ import UpdateCategory from "../components/Dashboard/ManageCategories/UpdateCateg
 import UpdateBrand from "../components/Dashboard/ManageBrands/UpdateBarand/UpdateBrand";
 import ProductPages from "../pages/Products/ProductPages";
 import ProductItem from "../components/Products/ProductItem";
+import Checkout from "../pages/Checkout/Checkout";
+import PrivateRoute from './PrivateRoute';
 
 export const router = createBrowserRouter([
   {
@@ -63,6 +65,14 @@ export const router = createBrowserRouter([
           <PublicRoute>
             <SignIn />
           </PublicRoute>
+        ),
+      },
+      {
+        path: "/checkout/:id",
+        element: (
+          <PrivateRoute>
+            <Checkout/>
+          </PrivateRoute>
         ),
       },
       {

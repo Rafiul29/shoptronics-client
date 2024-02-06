@@ -11,7 +11,7 @@ const ProductItem = () => {
 
   const { data: product, isError, isLoading } = useGetSingleProductQuery(pid);
 
-  useTitle(`Product - ${product?.title}`);
+  useTitle(`${product?.title} - Product`);
 
   // decide what to render
   //decide what to do render;
@@ -29,7 +29,7 @@ const ProductItem = () => {
   if (!isLoading && !isError && product?._id) {
     content = (
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 ">
-        <div className="w-full h-[38rem]  overflow-hidden">
+        <div className="w-full md:h-[38rem]  overflow-hidden">
           <img
             src={product?.image_link}
             alt={product?.title}
@@ -37,26 +37,26 @@ const ProductItem = () => {
           />
         </div>
         <div className=" flex flex-col gap-4 p-5">
-          <h2 className="text-2xl font-medium ">{product?.title}</h2>
-          <p className="flex flex-col gap-4">
-         <span className="text-xl font-semibold "> Quick Overview :</span>
+          <h2 className="text-xl font-medium ">{product?.title}</h2>
+          <p className="flex flex-col gap-2">
+            <span className="text-xl font-medium  "> Quick Overview :</span>
             <span>
-            {product?.description.split(",").map((d,i)=>(
-              <ul className="pl-5" key={i}>
-                <li className="list-disc font-light">{d}</li>
-              </ul>
-            ))}
+              {product?.description.split(",").map((d, i) => (
+                <ul className="pl-5" key={i}>
+                  <li className="list-disc font-light">{d}</li>
+                </ul>
+              ))}
             </span>
           </p>
           <h3 className="flex flex-row gap-5 text-lg ">
             {" "}
             <span>Brand</span>{" "}
-            <span className="font-semibold">{product?.brandId?.name}</span>
+            <span className="font-medium">{product?.brandId?.name}</span>
           </h3>
           <h3 className="flex flex-row gap-5 text-lg ">
             {" "}
             <span>Category</span>{" "}
-            <span className="font-semibold">{product?.categoryId?.name}</span>
+            <span className="font-medium">{product?.categoryId?.name}</span>
           </h3>
           <h3 className="flex flex-row gap-5 text-lg ">
             {" "}
@@ -78,18 +78,8 @@ const ProductItem = () => {
               )}
             </span>
           </h3>
-          {/* <Rating
-          value={product?.rating}
-          reviewsNum={`${product?.numReviews}`}
-          /> */}
-
-          <div className="mt-5 flex flex-row  justify-around  items-center">
-          <div className="text-center font-bold">
-            <Button text={"Booking now"} />
-          </div>
-          <Link to="/products" className="bg-blue-500 py-2 px-3 rounded-md text-gray-50 font-medium">
-            Go Back
-          </Link>
+          <div className="mt-5">
+           <Link to={`/checkout/${product._id}`} className="bg-blue-500 text-white  py-2 px-16 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 duration-500">Buy Now</Link>
           </div>
         </div>
       </div>
