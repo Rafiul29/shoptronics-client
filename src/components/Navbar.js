@@ -41,9 +41,9 @@ const Navbar = () => {
       <nav className="wrapper flex justify-between items-center">
         {/* nav logo */}
         <h2 className="logo">
-          <Link className="text-2xl font-semibold" to="/">
-            Sh<span className="text-blue-500 text-3xl">o</span>p Tro
-            <span className="text-blue-500 text-3xl">n</span>ics
+          <Link className="text-xl font-medium" to="/">
+            Sh<span className="text-blue-500 text-xl">o</span>p Tro
+            <span className="text-blue-500 text-xl">n</span>ics
           </Link>
         </h2>
 
@@ -69,7 +69,7 @@ const Navbar = () => {
         <div className="hidden sm:block">
           <div className="flex gap-5 justify-center items-center">
             <Link
-              className=" text-xl flex justify-center items-center gap-1"
+              className="font-light  flex justify-center items-center gap-1"
               to="/cart"
             >
               <AiOutlineShoppingCart /> Cart

@@ -44,8 +44,8 @@ const BrandTable = () => {
     }
   }, [resBrand]);
 
-  //get all categories
-  const {data:barands,isLoading,isError}=useGetAllBrandsQuery();
+  //get all b
+  const {data:brands,isLoading,isError}=useGetAllBrandsQuery();
 
   //decide what to do render;
   let content = null;
@@ -55,10 +55,10 @@ const BrandTable = () => {
   if (!isLoading && isError) {
     content = <Error message="brand not found" />;
   }
-  if (!isLoading && !isError && barands?.length === 0) {
+  if (!isLoading && !isError && brands?.length === 0) {
     content = <Error message="brand not found" />;
   }
-  if (!isLoading && !isError && barands?.length > 0) {
+  if (!isLoading && !isError && brands?.length > 0) {
     content = (
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-full text-md text-left rtl:text-right text-gray-700 dark:text-gray-400">
@@ -73,28 +73,28 @@ const BrandTable = () => {
             </tr>
           </thead>
           <tbody>
-            {barands &&
-              barands?.map((barand, i) => (
+            {brands &&
+              brands?.map((brand, i) => (
                 <tr
-                  key={barand._id}
+                  key={brand._id}
                   className="text-xs odd:bg-blue-100 even:bg-gray-100"
                 >
                   <TableData data={1 + i} />
-                  <TableData data={barand?.name} col={2} />
-                  <TableData data={barand?.products.length} />
+                  <TableData data={brand?.name} col={2} />
+                  <TableData data={brand?.products.length} />
                   <TableLinkData
                     data={<FaRegEdit className="" />}
-                    link={`/dashboard/update-brand/${barand?._id}`}
+                    link={`/dashboard/update-brand/${brand?._id}`}
                   />
 
                   <td
-                    onClick={() => handleDelete(barand?._id)}
+                    onClick={() => handleDelete(brand?._id)}
                     className="text-rose-500 px-5 text-2xl hover:text-rose-400  py-2 font-sans cursor-pointer duration-500"
                   >
                     <MdDeleteForever />
                   </td>
                   <TableData
-                    data={new Date(barand?.createdAt).toLocaleDateString()}
+                    data={new Date(brand?.createdAt).toLocaleDateString()}
                   />
                 </tr>
               ))}

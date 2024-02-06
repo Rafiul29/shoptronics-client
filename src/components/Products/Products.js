@@ -4,6 +4,7 @@ import Error from "../ui/Error.js";
 import SectionTitle from "../SectionTitle/SectionTitle.js";
 import ProductCard from "./ProductCard.js";
 import { useState } from "react";
+import FilterProducts from "./FilterProducts.js";
 
 const Products = () => {
   // title
@@ -17,9 +18,6 @@ const Products = () => {
   const { data: products, isError, isLoading } = useGetProductsQuery(setUrl);
 
  
-
-
-
   //decide what to do render;
   let content = null;
   if (isLoading) {
@@ -43,7 +41,8 @@ const Products = () => {
     <section className="section-padding mt-20">
       <div className="wrapper">
         <SectionTitle title={"Browse all Products"} />
-        <div className="mb-10 border ">
+        {/* <FilterProducts/> */}
+        {/* <div className="mb-10 border ">
           {" "}
           <input
           onChange={(e)=>setTitle(e.target.value)}
@@ -51,9 +50,9 @@ const Products = () => {
             id="title"
             name="title"
             className="w-full border rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
-            placeholder="Enter your email"
+            placeholder="search product"
           />
-        </div>
+        </div> */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
           {content}
         </div>
