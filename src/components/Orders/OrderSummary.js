@@ -5,7 +5,7 @@ const OrderSummary = ({ product }) => {
   const { _id, title, price, image_link } = product;
   return (
     <div className="flex flex-col gap-3">
-      <h2 className="text-2xl font-medium ">Order Summary</h2>
+      <h2 className="text-2xl font-medium md:mb-10">Order Summary</h2>
       <div className="flex flex-col gap-2 w-full border rounded-md overflow-hidden p-5">
         <h2 className="font-semibold flex justify-between items-center p-2">
           <span>Product Code :</span>{" "}
