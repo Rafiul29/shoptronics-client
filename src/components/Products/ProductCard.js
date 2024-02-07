@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
         <img
           src={product.image_link}
           alt={product.title}
-          className="w-full h-full object-cover border-none group-hover:scale-105 group-hover:brightness-100 eq bg-red-50"
+          className="w-full h-full object-cover border-none group-hover:scale-105 group-hover:brightness-100 eq"
         />
       </div>
       <div className="texts flex flex-col gap-2 px-4 pb-5">

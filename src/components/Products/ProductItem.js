@@ -29,7 +29,7 @@ const ProductItem = () => {
   if (!isLoading && !isError && product?._id) {
     content = (
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 ">
-        <div className="w-full md:h-[38rem]  overflow-hidden">
+        <div className="md:w-[42rem] md:h-[34rem] overflow-hidden border-2 rounded-lg p-10">
           <img
             src={product?.image_link}
             alt={product?.title}
@@ -38,16 +38,16 @@ const ProductItem = () => {
         </div>
         <div className=" flex flex-col gap-4 p-5">
           <h2 className="text-xl font-medium ">{product?.title}</h2>
-          <p className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2">
             <span className="text-xl font-medium  "> Quick Overview :</span>
-            <span>
+            <div>
               {product?.description.split(",").map((d, i) => (
                 <ul className="pl-5" key={i}>
                   <li className="list-disc font-light">{d}</li>
                 </ul>
               ))}
-            </span>
-          </p>
+            </div>
+          </div>
           <h3 className="flex flex-row gap-5 text-lg ">
             {" "}
             <span>Brand</span>{" "}

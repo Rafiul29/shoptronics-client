@@ -24,6 +24,7 @@ import ProductPages from "../pages/Products/ProductPages";
 import ProductItem from "../components/Products/ProductItem";
 import Checkout from "../pages/Checkout/Checkout";
 import PrivateRoute from './PrivateRoute';
+import CheckoutSuccess from "../pages/CheckoutSuccess/CheckoutSuccess";
 
 export const router = createBrowserRouter([
   {
@@ -72,6 +73,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <Checkout/>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/checkout-success",
+        element: (
+          <PrivateRoute>
+            <CheckoutSuccess/>
           </PrivateRoute>
         ),
       },
