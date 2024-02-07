@@ -121,7 +121,7 @@ const Checkout = () => {
               <div className="sm:col-span-2">
                 <TextInput
                   type="text"
-                  title=" Postal code"
+                  title="Phone Number"
                   // value={title}
                   // onChange={(e) => setTitle(e.target.value)}
                 />
