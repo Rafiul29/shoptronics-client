@@ -13,10 +13,10 @@ export const ordersApi = apiSlice.injectEndpoints({
   }),
 
     // get Single product
-    getAllOrders: builder.query({
-      query: () => `/brands/private/`,
+    getAllOrdersUser: builder.query({
+      query: () => `/orders/private/user`,
     }),
   }),
 });
 
-export const {useCreateOrderMutation,useGetAllOrdersQuery} = ordersApi;
+export const {useCreateOrderMutation,useGetAllOrdersUserQuery} = ordersApi;

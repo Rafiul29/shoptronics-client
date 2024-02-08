@@ -12,13 +12,12 @@ import { userLoggedOut } from "../features/auth/authSlice";
 import useAuth from "../hooks/useAuth";
 import useAuthAdmin from "../hooks/useAuthAdmin";
 
-
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const isLoggedIn = useAuth();
   const isAdmin = useAuthAdmin();
-  
+
   const dispatch = useDispatch();
   const naviagate = useNavigate();
   const signOut = () => {
@@ -37,7 +36,7 @@ const Navbar = () => {
   // console.log(user)
 
   return (
-    <header className="w-full h-20 border-b border-gray flex items-center bg-white/90 backdrop-blur-lg fixed z-50 top-0 right-0 left-0 ">
+    <header className="w-full h-20 border-b border-gray flex items-center bg-white/70 backdrop-blur-lg fixed z-50 top-0 right-0 left-0 ">
       <nav className="wrapper flex justify-between items-center">
         {/* nav logo */}
         <h2 className="logo">
@@ -62,18 +61,23 @@ const Navbar = () => {
             <Link to="/contact" className="link-item ">
               Contact
             </Link>
+            {isLoggedIn && (
+              <Link to="/user/orders" className="link-item ">
+                orders
+              </Link>
+            )}
           </div>
         </div>
 
         {/* nav right */}
         <div className="hidden sm:block">
           <div className="flex gap-5 justify-center items-center">
-            <Link
+            {/* <Link
               className="font-light  flex justify-center items-center gap-1"
               to="/cart"
             >
               <AiOutlineShoppingCart /> Cart
-            </Link>
+            </Link> */}
 
             {!isLoggedIn && (
               <Link
@@ -89,7 +93,7 @@ const Navbar = () => {
                 to="/dashboard/manage-products"
                 className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 duration-500"
               >
-               Dashboard
+                Dashboard
               </Link>
             )}
 

@@ -25,6 +25,7 @@ import ProductItem from "../components/Products/ProductItem";
 import Checkout from "../pages/Checkout/Checkout";
 import PrivateRoute from './PrivateRoute';
 import CheckoutSuccess from "../pages/CheckoutSuccess/CheckoutSuccess";
+import Orders from "../pages/Orders/Orders";
 
 export const router = createBrowserRouter([
   {
@@ -81,6 +82,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <CheckoutSuccess/>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/user/orders",
+        element: (
+          <PrivateRoute>
+            <Orders/>
           </PrivateRoute>
         ),
       },
