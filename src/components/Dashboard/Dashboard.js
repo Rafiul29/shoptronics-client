@@ -1,5 +1,5 @@
 import { FaHome } from "react-icons/fa";
-import { FaRegUser } from "react-icons/fa6";
+import { MdPayment } from "react-icons/md";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import { SiBrandfolder } from "react-icons/si";
 import { BiCategory } from "react-icons/bi";
@@ -40,6 +40,12 @@ const Dashboard = () => {
             <NavLink to="/dashboard/manage-brands" className="flex justify-start items-center gap-2">
               <SiBrandfolder></SiBrandfolder>
               Brands
+            </NavLink>
+          </li>
+          <li className="bg-gray-300 px-4 py-2 rounded-xl  hover:bg-gray-400  hover:text-gray-200 duration-700 ">
+            <NavLink to="/dashboard/manage-orders" className="flex justify-start items-center gap-2">
+              <MdPayment />
+              Order History
             </NavLink>
           </li>
         </ul>

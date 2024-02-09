@@ -26,6 +26,7 @@ import Checkout from "../pages/Checkout/Checkout";
 import PrivateRoute from './PrivateRoute';
 import CheckoutSuccess from "../pages/CheckoutSuccess/CheckoutSuccess";
 import Orders from "../pages/Orders/Orders";
+import AllOrders from "../components/Dashboard/ManageOrders/AllOrders";
 
 export const router = createBrowserRouter([
   {
@@ -138,6 +139,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/update-brand/:bid",
         element: <UpdateBrand />,
+      },
+      {
+        path: "/dashboard/manage-orders",
+        element: <AllOrders />,
       },
     ],
   },
