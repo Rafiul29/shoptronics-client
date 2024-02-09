@@ -1,3 +1,4 @@
+import Sponserse from "../../Sponserse";
 import Hero from "../../components/Hero";
 import Products from "../../components/Products/Products";
 import { useTitle } from "../../hooks/useTitle";
@@ -12,6 +13,7 @@ const Home = () => {
    <>
     <main>
     <Hero/>
+    <Sponserse/>
     <Products/>
     </main>
    </>

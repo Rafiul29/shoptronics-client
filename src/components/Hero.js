@@ -26,7 +26,7 @@ const Hero = () => {
               </span>
             </Link>
           </div>
-          <div className="overflow-hidden bg-gray-50/80 rounded-full ">
+          <div className="overflow-hidden bg-slate-50 shadow-md rounded-full ">
             <Player
               autoplay
               loop
