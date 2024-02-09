@@ -1,3 +1,4 @@
+import Hero from "../../components/Hero";
 import Products from "../../components/Products/Products";
 import { useTitle } from "../../hooks/useTitle";
 // import Products from "../Products/Products"
@@ -10,6 +11,7 @@ const Home = () => {
   return (
    <>
     <main>
+    <Hero/>
     <Products/>
     </main>
    </>

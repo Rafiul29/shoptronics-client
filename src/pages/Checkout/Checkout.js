@@ -101,7 +101,8 @@ const Checkout = () => {
 
               <div>
                 <TextInput
-                  type="text"
+                  type="tel"
+                  // pattern="[789][0-9]{9}"
                   title="Phone Number"
                   value={phoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value)}

@@ -38,11 +38,12 @@ const Products = () => {
   }
 
   return (
-    <section className="section-padding mt-20">
+  
       <div className="wrapper">
         <SectionTitle title={"Browse all Products"} />
+
         {/* <FilterProducts/> */}
-        {/* <div className="mb-10 border ">
+        <div className="mb-10 border ">
           {" "}
           <input
           onChange={(e)=>setTitle(e.target.value)}
@@ -52,12 +53,11 @@ const Products = () => {
             className="w-full border rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
             placeholder="search product"
           />
-        </div> */}
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
           {content}
         </div>
       </div>
-    </section>
   );
 };
 

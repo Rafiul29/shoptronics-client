@@ -8,9 +8,9 @@ const ProductPages = () => {
   useTitle("Products");
 
   return (
-    <>
+    <section className="section-padding mt-20">
     <Products/>
-    </>
+    </section>
   );
 };
 
